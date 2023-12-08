@@ -8,14 +8,16 @@ if (isset($_POST['action']) && $_POST['action'] === 'calculate') {
     $b = floatval($_POST['b']);
     $operator = $_POST['operator'];
 
-    switch ($operator) {
-        case '+':
-            $result = $calculator->sum($a, $b);
-            break;
-
-        default:
-            $result = 'Invalid operator';
-    }
+    if($operator=='+')
+        $result = $calculator->sum($a, $b);
+    else if($operator== '-')
+        $result = $calculator->sub($a, $b);
+    else if($operator== '*')
+        $result = $calculator->multi($a, $b);
+    else if($operator== '/')
+        $result = $calculator->diviton($a, $b);
+    else 
+        $result = $calculator->diviton($a, $b);
     
     echo json_encode( $result);
     exit;

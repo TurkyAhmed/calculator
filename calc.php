@@ -1,8 +1,3 @@
-<?php
-// require_once("calculation.php");
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         .container{
             position: absolute;
             left: 50%;
@@ -27,11 +21,11 @@
             height: 5rem;
             padding: 15px;
         }
-        .commands{
+        .btns{
             display: flex;
             flex-wrap: wrap;
         }
-        .commands button{
+        .btns button{
             width: 80px;
             text-align: center;
             height: 50px;
@@ -44,30 +38,30 @@
             <div class="screen">
                 <input type="text" name="screen" id="screen">
             </div>
-            <div class="commands">
-                <button id="pra">%</button>
-                <button id="ce">CE</button>
-                <button id="c">C</button>
-                <button id="back">Back</button>
-                <button id="bla">1/x</button>
-                <button id="x2">x<sup>2</sup></button>
-                <button id="sqrt">sqrt</button>
-                <button id="divi">/</button>
-                <button id="7">7</button>
-                <button id="8">8</button>
-                <button id="9">9</button>
-                <button id="*">*</button>
-                <button id="4">4</button>
-                <button id="5">5</button>
-                <button id="6">6</button>
-                <button id="sub">-</button>
-                <button id="1">1</button>
-                <button id="2">2</button>
-                <button id="3">3</button>
-                <button id="sum">+</button>
-                <button id="sub_sum">+/-</button>
-                <button id="0">0</button>
-                <button id="dot">.</button>
+            <div class="btns">
+                <button>%</button>
+                <button>CE</button>
+                <button id='clear'>C</button>
+                <button>Back</button>
+                <button>1/x</button>
+                <button>x<sup>2</sup></button>
+                <button>sqrt</button>
+                <button>/</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>*</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>+</button>
+                <button>+/-</button>
+                <button>0</button>
+                <button>.</button>
                 <button id="equal">=</button>
 
             </div>
@@ -77,6 +71,7 @@
     <script>
         let screen = document.querySelector('.screen input');
         let eql = document.querySelector('#equal');
+        let clr = document.getElementById('clear');
         let btn=document.getElementsByTagName('button');
 
         eql.addEventListener('click',()=>{
@@ -108,6 +103,10 @@
                 screen.value += btn[i].innerHTML;
             });
         }
+
+        clr.addEventListener('click',()=>{
+            screen.value = '';
+        })
     </script>
 </body>
 </html>
